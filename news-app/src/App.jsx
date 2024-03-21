@@ -1,11 +1,14 @@
 import { Header } from "./components/Header/Header"
+import { Main } from "./pages/Main/Main"
 
 const App = () => {
 
   return (
     <>
-      <h1>Vite + React</h1>
       <Header />
+      <div className="container">
+        <Main />
+      </div>
     </>
   )
 }
