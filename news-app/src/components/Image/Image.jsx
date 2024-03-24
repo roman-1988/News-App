@@ -1,8 +1,9 @@
+import styles from "./styles.module.css"
 
 const Image = ({ image }) => {
 
     return (
-        <div className={StyleSheet.wrapper}>
+        <div className={styles.wrapper}>
             {image ? <img src={image} alt="news" className={styles.image} /> : null}
         </div>
     )
