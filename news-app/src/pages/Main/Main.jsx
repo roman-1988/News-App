@@ -12,8 +12,10 @@ const Main = () => {
     useEffect(() => {
         const fetchNews = async () => {
             try {
+                setIsLoading(true)
                 const response = await getNews()
                 setNews(response.news)
+                setIsLoading(false)
             } catch (error) {
                 console.log(error)
             }
@@ -23,9 +25,17 @@ const Main = () => {
 
     return (
         <main className={styles.main}>
-            {news.length > 0 && !isLoading ? <NewsBanner item={news[0]} /> : <Preloader count={1} type={"banner"} />}
+            {news.length > 0 && !isLoading ? (
+                <NewsBanner item={news[0]} />
+            ) : (
+                <Preloader count={1} type={"banner"} />
+            )}
 
-            <NewsList news={news} />
+            {!isLoading ? (
+                <NewsList news={news} />
+            ) : (
+                <Preloader count={10} type={"item"} />
+            )}
         </main>
     )
 }
