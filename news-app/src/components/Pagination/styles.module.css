@@ -6,19 +6,24 @@
     justify-content: center;
 }
 
-.pageNumber {
-    padding: 8px;
+.pageNumber,
+.arrowBtn {
     border: none;
     background-color: white;
+    cursor: pointer;
+}
+
+.pageNumber:disabled,
+.arrowBtn:disabled {
+    cursor: default;
+}
+
+.pageNumber {
+    padding: 8px;
 }
 
 .list {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.arrowBtn {
-    border: none;
-    background-color: white;
 }
